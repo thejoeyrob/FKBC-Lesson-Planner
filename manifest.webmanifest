@@ -1,0 +1,49 @@
+{
+  "name": "Featherstone Kickboxing Lesson Planner",
+  "short_name": "FKBC Planner",
+  "description": "Plan classes, assign coaches and run an immersive kickboxing lesson timer.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "any",
+  "background_color": "#080a0d",
+  "theme_color": "#080a0d",
+  "categories": [
+    "sports",
+    "productivity",
+    "education"
+  ],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Open Lesson Planner",
+      "short_name": "Plan Lesson",
+      "url": "./",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
