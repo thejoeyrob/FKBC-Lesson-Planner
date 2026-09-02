@@ -1,4 +1,4 @@
-const CACHE_NAME = "fkbc-planner-ultimate-v5";
+const CACHE_NAME = "fkbc-planner-ultimate-v6";
 const CORE_ASSETS = [
   "./",
   "./apple-touch-icon.png",

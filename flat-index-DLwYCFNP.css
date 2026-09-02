@@ -22,3 +22,35 @@
 .timer-stage:before{content:""!important;z-index:-1!important;opacity:.075!important;background-image:url("fkbc-logo-light.png"),repeating-linear-gradient(128deg,transparent 0 18px,rgba(255,255,255,.06) 18px 19px)!important;background-repeat:no-repeat,repeat!important;background-position:center center,0 0!important;background-size:min(64vw,900px) auto,auto!important;filter:grayscale(1) contrast(.8)!important;mix-blend-mode:screen!important;position:absolute!important;inset:0!important;pointer-events:none!important}
 .timer-top-actions{flex-wrap:wrap;justify-content:flex-end}.timer-top-actions button{touch-action:manipulation}.timer-controls button{touch-action:manipulation;position:relative;z-index:12}.timer-next{max-width:82vw;text-align:center;line-height:1.35}
 .lesson-row.break{background:linear-gradient(135deg,#eef0f3,#dfe3e8)!important;color:#11151a!important}.dark .lesson-row.break{background:linear-gradient(135deg,#1d2229,#14181e)!important;color:#f5f6f7!important}.lesson-row.break .row-number{background:transparent!important}
+
+/* FKBC v6 — centred modal geometry + reliable scroll on iOS/iPadOS */
+html body [data-slot="dialog-overlay"]{position:fixed!important;inset:0!important;width:100%!important;height:100%!important;z-index:2147483600!important;background:rgba(0,0,0,.76)!important;overflow:hidden!important}
+html body [data-slot="dialog-content"].settings-dialog,
+html body [data-slot="dialog-content"].review-dialog,
+html body [data-slot="dialog-content"].tutorial-dialog{
+ position:fixed!important;left:50%!important;right:auto!important;top:50%!important;bottom:auto!important;transform:translate(-50%,-50%)!important;
+ width:min(94vw,1100px)!important;height:min(92dvh,900px)!important;max-width:1100px!important;max-height:92dvh!important;
+ margin:0!important;padding:clamp(14px,2.2vw,26px)!important;border:1px solid var(--border)!important;border-top:5px solid var(--red)!important;
+ border-radius:22px!important;background:var(--surface,#fff)!important;box-shadow:0 30px 90px rgba(0,0,0,.55)!important;
+ overflow:hidden!important;box-sizing:border-box!important;z-index:2147483601!important;
+}
+html body [data-slot="dialog-content"].settings-dialog,
+html body [data-slot="dialog-content"].tutorial-dialog{display:grid!important;grid-template-rows:auto minmax(0,1fr) auto!important}
+html body [data-slot="dialog-content"].review-dialog{display:grid!important;grid-template-rows:auto auto auto minmax(0,1fr) auto!important}
+.settings-scroll,.tutorial-scroll,.review-dialog .review-list{min-width:0!important;min-height:0!important;max-height:none!important;overflow-x:hidden!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch!important;overscroll-behavior:contain!important;touch-action:pan-y!important;padding-right:8px!important}
+.settings-scroll{display:block!important}
+.settings-group{width:100%!important;min-width:0!important;margin-bottom:14px!important;overflow:visible!important}
+.setting-line,.settings-action{width:100%!important;min-width:0!important;box-sizing:border-box!important;flex-wrap:wrap!important;gap:10px!important}
+.setting-line>div:first-child,.settings-action>div:first-child{min-width:0!important;flex:1 1 260px!important}
+.setting-line>div:last-child,.settings-action>button,.settings-action>select{flex:0 0 auto!important;max-width:100%!important}
+.settings-dialog [data-slot="dialog-header"],.review-dialog [data-slot="dialog-header"],.tutorial-dialog [data-slot="dialog-header"]{min-width:0!important;overflow:visible!important}
+.settings-dialog [data-slot="dialog-footer"],.review-dialog [data-slot="dialog-footer"],.tutorial-dialog [data-slot="dialog-footer"]{position:relative!important;bottom:auto!important;left:auto!important;right:auto!important;width:100%!important;background:var(--surface,#fff)!important;padding-top:12px!important;margin:0!important}
+@media (max-width:600px){
+ html body [data-slot="dialog-content"].settings-dialog,html body [data-slot="dialog-content"].review-dialog,html body [data-slot="dialog-content"].tutorial-dialog{width:calc(100vw - 20px)!important;height:calc(100dvh - 20px)!important;max-height:calc(100dvh - 20px)!important;border-radius:16px!important;padding:14px!important}
+ .setting-line,.settings-action{align-items:flex-start!important}.setting-line>div:first-child,.settings-action>div:first-child{flex-basis:190px!important}
+}
+@media (orientation:landscape) and (max-height:600px){
+ html body [data-slot="dialog-content"].settings-dialog,html body [data-slot="dialog-content"].review-dialog,html body [data-slot="dialog-content"].tutorial-dialog{width:calc(100vw - 24px)!important;height:calc(100dvh - 16px)!important;max-height:calc(100dvh - 16px)!important;padding:10px 14px!important;border-radius:14px!important}
+ .settings-dialog [data-slot="dialog-header"],.review-dialog [data-slot="dialog-header"],.tutorial-dialog [data-slot="dialog-header"]{max-height:28dvh!important;overflow-y:auto!important}
+ .settings-group{margin-bottom:9px!important}.setting-line,.settings-action{min-height:52px!important;padding:8px 10px!important}
+}
