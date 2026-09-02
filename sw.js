@@ -1,4 +1,4 @@
-const CACHE_NAME = "fkbc-planner-ultimate-v6";
+const CACHE_NAME = "fkbc-planner-ultimate-v7";
 const CORE_ASSETS = [
   "./",
   "./apple-touch-icon.png",
@@ -6,8 +6,8 @@ const CORE_ASSETS = [
   "./bleep.wav",
   "./fkbc-logo-dark.png",
   "./fkbc-logo-light.png",
-  "./flat-index-DLwYCFNP.css",
-  "./flat-index-DzJyFLBM.js",
+  "./flat-index-DLwYCFNP-v7.css",
+  "./flat-index-DzJyFLBM-v7.js",
   "./gracie-full.webp",
   "./gracie-portrait.webp",
   "./icon-192.png",
